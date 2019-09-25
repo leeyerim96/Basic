@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Select Test **</title>
+</head>
+<body>
+<h2>** Select Test **<br>
+<form action="/Jsp01/select" method="get">
+	<span style="float:left; margin-right: 20px;">
+	<label for=job>직업 : </label>
+	<select id=job name=job size=1>
+		<option value="">선택하세요</option>
+		<option value="student">학생</option>
+		<option value="programmer">개발자</option>
+		<option value="언론인">언론인</option>
+		<option value="게이머">게이머</option>
+		<option value="교육자">교육자</option>
+	</select>
+	</span>
+	
+	<label for=int style="float:left;">관심분야 : </label>
+	<select id=int name=interest size=5 multiple="multiple">
+		<option value="Oracle">ORACLE</option>
+		<option value="Java">JAVA</option>
+		<option value="Servlet">SERVLET</option>
+		<option value="Jsp">JSP</option>
+		<option value="Spring">SPRING</option>
+	</select><br><br>
+	<input type="submit" value="전송" style="float:right; margin-right: 50px">
+</form>
+</h2>
+</body>
+</html>

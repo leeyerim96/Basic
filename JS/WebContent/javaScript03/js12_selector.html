@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>**Selector_id, tag, tag all**</title>
+<script>
+	onload=function(){
+		// i) ID test
+		var h = document.getElementById('header');
+		h.style.color='Orange';
+		h.style.backgroundColor='Green';
+		//2) Tag Test
+		var t=document.querySelector('h3');
+		t.style.color='Aqua';
+		t.style.backgroundColor='Yellow';
+		//3) TagAll Test
+		var a=document.querySelectorAll('h4');
+		//a.style.color='red';
+		//a.style.backgroundColor='gray';
+		for(var i=0; i<a.length; i++){
+			a[i].style.color='Red';
+			a[i].style.backgroundColor='Silver';
+			a[i].innerHTML='querySelectorAll 성공~~'+(i+1);
+		}
+	}
+</script>
+</head>
+<body>
+<h3>**Selector_id, tag, tag all**
+** 1) id : document.getElementById('header')<br></h3>
+<h3 id=header>getElementById Test</h3><br>
+-----------------------------------------------------------------
+<h3>
+** 2) tag : document.querySelector('h4')<br>
+=> 선택자(태그)를 이용해서 선택합니다.<br>
+=> 처음 1개의 tag만 선택됨 <br>
+-----------------------------------------------------------------
+** 3) tag all : document.querySelectorAll('h4')<br>
+=> 선택자(태그)를 이용하여 모두 선택해서 배열로.... <br><br></h3>
+<h4>** querySelector Test1</h4>
+<h4>** querySelector Test2</h4>
+<h4>** querySelector Test3</h4>
+<h4>** querySelector Test4</h4>
+<h4>** querySelector Test5</h4>
+
+</body>
+</html>

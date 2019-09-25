@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+// 1) css 메서드 활용 
+// 1.1 ) 하나씩 지정하기
+	$('h3').css('color','Blue');
+	$('h4').css({
+		color:'Green',
+		backgroundColor: "Yellow"
+	});
+// 1.2) 한번에 여러속성 지정하기
+	$('.box').css({
+		float: "left",
+		margin:"10",
+		width:"100",
+		height:"100",
+		backgroundColor:"Orange"});
+		
+		
+// 1.3) 익명함수로 지정하기
+
+// 2) Color Gradation
+	var output='';
+	for (var i=0; i<256; i++){
+		output += '<div></div>';
+	}
+	
+	document.body.innerHTML = output // 제이쿼리로 태그를 인식할때에는 
+
+	$('div').css({
+			height:'2px',
+			backgroundColor: function(i){
+				return 'rgb('+i+','+50+','+i+')'
+			}
+	});
+
+})// ready
+</script>
+</head>
+<body>
+<h3>** Css style Test**</h3>
+<h4>** 1) css 메서드 활용</h4>
+<h4>** 2) css 메서드 활용 => box</h4>
+<h4>** 3) Color Gradation <br>
+	=> css 메서드의 속성값에 function 적용</h4>
+	<br><hr><br>
+<div class=box></div>
+<div class=box></div>
+<div class=box></div>
+</body>
+</html>

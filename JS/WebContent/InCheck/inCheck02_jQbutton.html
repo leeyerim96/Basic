@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** 입력 자료의 무결성 점검_jQuery,button **</title>
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<script>
+//inCheck 2 
+//=> jQuery방식으로 button 과 submit메서드 활용 
+//=> 이벤트 제거(무효와)는 필요없지만 : e.preventDefault() -> XXX
+//=> form의 submit 필요 : $('form').submit() ;
+$(function(){
+	$('#finish').click(function(){
+		// 1. value 값 가져오기
+		// 2. 오류 확인
+		//  => 오류 확인 
+		//     error -> alert, event제거(button:X), focus, return
+		//     ok -> next 문장으로...
+		//  => 오류 확인 후 모두 ok 이면 submit 처리
+		var id=$('#id').val() ;
+		var password=$('#password').val();
+		var pLength=password.length;
+		var name=$('#name').val();
+		
+		if (id=="") {
+			alert('id 를 입력 하세요 ~~');
+			$('#id').focus();
+			return;
+		}else if (id.length < 5) {
+			alert('id는 4글자 이상 입니다 ~~~');
+			$('#id').focus();
+			return;
+		}else if (id.replace(/[a-z.A-Z.0-9]/g,'').length>0) { 
+			// 영문확인 정규식
+			alert('id는 영문과 숫자로만 입력 하세요  ~~~');
+			$('#id').focus();
+			return;
+		};
+		
+		if (password=="") {
+			alert('password 를 입력 하세요 ~~');
+			$('#password').focus();
+			return;
+		}else if (password.length < 5) {
+			alert('password는 4글자 이상 입니다 ~~~');
+			$('#password').focus();
+			return;
+		}else if (password.replace(/[!-*]/g,'').length>=pLength) {
+			alert('password는 특수문자를 반드시 입력해야 됩니다 ~~~') ;
+			$('#password').focus();  
+			return;
+		} else if (password.replace(/[!-*.0-9]/g,'').length>0) {
+			alert('password는 숫자와 특수문자로만 정확하게 입력하세요 ~~~') ;
+			$('#password').focus();
+			return;
+		};
+		
+		// name : 한글 	
+		if (name=="") {
+			alert('name 을 입력 하세요 ~~');
+			$('#name').focus();
+			return;
+		}else if (name.length < 2) {
+			alert('name은 2글자 이상 입니다 ~~~');
+			$('#name').focus();
+			return;
+		}else if (name.replace(/[가-힣.a-z]/gi,'').length>0) {
+			alert('name은 한글 또는 영문으로 입력 하세요 ~~~');
+			$('#name').focus();
+			return;
+		};
+		
+		$('form').submit();
+		// 오류 없이 아래로 내려오면 submit 을 발생시킨다.
+		// => form 의 submit() 을 매개변수없이 사용하면 바로 submit 진행됨. 
+	}); // click
+		
+}); // ready	
+</script>
+</head>
+<body>
+<h3>** 입력 자료의 무결성 점검_jQuery,button **</h3>
+<form action="test" method="post" name="myForm">
+<table>
+	<tr><td bgcolor="aqua">I D</td>
+	    <td><input type="text" id="id" name="id" value="banana"></td>
+	</tr>
+	<tr><td bgcolor="aqua">Password</td>
+	    <td><input type="password" id="password" name="password" value="12345!"></td>
+	</tr>
+	<tr><td bgcolor="aqua">Name</td>
+	    <td><input type="text" id="name" name="name" value="홍길동"></td>
+	</tr>
+	<tr><td><button>ButtonTest</td>
+		<!-- form Tag 내에서 button 사용시 
+		input Tag 의 type='submit' 처럼 작동함  -->
+	    <td>
+	    	<input type="button" value="전송" id=finish>&nbsp;
+	        <input type="reset" value="취소"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

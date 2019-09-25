@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Basic AttributesEx03_Font & Text **</title>
+<style type="text/css">
+	.f1 {font-family: Arial; font-size: small; text-decoration: underline;}
+	.f2 {font-family: MyFont,fantasy,Arial; font-size: large; text-decoration: overline;}
+	.f3 {font-family: 굴림체; font-size: 24px; font-weight: bold;}
+	.f4 {font-style: italic; font-stretch: wider;  
+							text-decoration: line-through;} /* 취소선 */
+	
+	.button { width:200px; height:100px;
+			  background-color: orange; 
+			  text-align: center;
+			  border-radius: 20px; 
+			  border: 10px solid gray; /* 두께 선스타일 색상 */
+			  box-shadow: 5px 5px 5px #A9A9A9 ;
+			   }
+	/* 그림자	=> box, Text 
+            => 오른쪽, 아래, 흐림도, 색상 */	
+	a {color:gray; text-decoration: none;}		   
+	.button > a {line-height: 100px;}
+</style>
+</head>
+<body>
+<p class=f1> Font Test1 : f1 </p>
+<p class="f2 f1"> Font Test2 : f1, f2 </p>
+<p class=f3> Font Test3 : f3 </p>
+<p class="f3 f4"> Font Test4 : f3, f4 </p>
+<h2>** Button & Line_Height Test **</h2>
+<div class="button f3"><a href="http://www.naver.com">aTag 속성Test</a>
+</div>
+<hr>
+<pre>
+** text-align
+** text-decoration 
+  => 텍스트에 줄을 표시합니다.
+  => 속성의 값이 underline일 경우 밑줄, overline일 경우 윗줄,
+     line-through일 경우 취소 선을 나타냅니다.
+     blink일 경우에는 문자를 깜빡이게 합니다.
+     (blink는 익스플로러, 크롬에서는 동작하지 않습니다)
+  => none (표시하지 않음) 
+** line-height 
+  => line의 높이값을 지정.
+</pre>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>**Event Basic**</title>
+<script>
+//Test2
+function scriptTest(){
+	alert('~~hello inLine+scritpe Test');
+}
+
+//test3 
+//body가 만들어지기전에 실행되기때문에 인식이 안됨 그래서 onload를 해줘야함! 인식되도록
+onload=function(){
+var b=document.getElementById('trad');
+b.onclick=function(){
+	alert('Traditional');
+	//test4 this
+	// => this 사용하면 이벤트 발생 객체 자신에 접근 가능
+	this.style.color='Red';
+	this.style.backgroundColor='Yellow';
+	this.textContent=this.textContent+'☆';
+}// onclick
+
+//test5 event Remove
+var a=document.getElementById('remove');
+a.onclick=function(){
+	return false; // 기본이벤트 제거
+}
+
+} // onload
+
+function hidemenu(){
+	alert(' 우클릭 금지 ');
+	return false;
+}
+document.oncontextmenu=hidemenu;
+
+</script>
+</head>
+<body>
+<h3>**Event Basic**</h3>
+<b><pre>
+=> onClick = function()
+       이벤트 속성 = 대응되는 함수를 이벤트 핸들러 또는 이벤트 리스너라고 함.
+=> 이벤트 속성 => on을 제외한 Click을 이벤트 이름 또는 이벤트 타입이라함.
+=> 이벤트 모델
+   document 객체에 이벤트를 연결하는 방법을 이벤트 모델이라함.
+      종류 -> 1) 인라인 방식, 2) 인라인+스크립트, 3) 고전적(Traditional) 방식
+</pre>
+=> 1) 인라인 방식<br>
+<button onclick="alert('~~hello inLineTest')">inLineTest</button><br>
+=> 2) 인라인+스크립트<br>
+<button onclick="scriptTest()">inLine_script</button><br>
+=> 3) 고전적(Traditional)방식<br>
+<button id=trad>Traditional</button><br>
+---------------------------------------<br>
+=> 4) this<br>
+=> 5) 기본 이벤트 제거 (remove) <br>
+<a href="http://www.naver.com" id="remove">RemoveTest</a>
+<h4>우클릭 금지 Test</h4>
+
+=> 6) Special inLine<br>
+....a 태그의 url 값을 이용(javascript : 구문작성)<br>
+....history.go <br>
+....history 객체는 최근 방문했던 사이트의 주소들에 관한 정보를 가지고 있음<br>
+<a href="javascript:history.go(-1)">이전으로</a><br>
+<a href="javascript:histroy.go(+1)">다음으로</a><br>
+<a href="javascript:void(document.body.style.backgroundColor='#FF9090');">배경색변경</a><br>
+</b>
+</body>
+</html>

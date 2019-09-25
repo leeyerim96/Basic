@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Java Script Basic03_ 연산자 **</title>
+</head>
+<body>
+<h3>** Java Script Basic03_ 연산자 **</h3>
+<h3>** 1. 4칙 연산자 **</h3>
+<script>
+	var a=10; b=3;
+	document.write('a+b='+(a+b)+'<br>');
+	document.write('a-b='+(a-b)+'<br>');
+	document.write('a*b='+(a*b)+'<br>');
+	document.write('a/b='+(a/b)+'<br>');
+	document.write('a%b='+(a%b)+'<br>');
+</script>
+<h3>**2. 단항연산자 : ++, -- **</h3>
+<script>
+	var a=10, b=10;
+	document.write('++a='+(++a)+'<br>'); // 11
+	document.write('b++='+(b++)+'<br>'); // 10 -> 11
+	document.write('--a='+(--a)+'<br>'); // 10
+	document.write('b--='+(b--)+'<br>'); // 11 -> 10
+	
+	document.write('a+b='+(a+b)+'<br>'); //20
+	
+</script>
+<h3>** 3. 축약대입연산자: +=,-=,*=, /=, %= **</h3>
+<script>
+	var a=10; b=3;
+	document.write('a+=b'+(a+=b)+'<br>');
+	document.write('a-=b'+(a-=b)+'<br>');
+	document.write('a*=b'+(a*=b)+'<br>');
+	document.write('a/=b'+(a/=b)+'<br>');
+	document.write('a%=b'+(a%=b)+'<br>');
+</script>
+<h3> ** 4. 비교 연산 **</h3>
+<script>
+	var a=10; b=3;
+	document.write('a > b : '+(a>b)+'<br>');
+	document.write('a < b : '+(a<b)+'<br>');
+	document.write('a>=b : '+(a>=b)+'<br>');
+	document.write('a<=b : '+(a<=b)+'<br>');
+	document.write('a==b : '+(a==b)+'<br>');
+	document.write('a!=b : '+(a!=b)+'<br>');
+	var x=10; y='10';
+	document.write('x==y : '+(x==y)+'<br>');
+	document.write('x!=y : '+(x!=y)+'<br>');
+	//타입 비교 x , 값만 비교함!
+	
+	// 값과 타입 모두 비교-
+	document.write('x===y: '+(x===y)+'<br>');
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>**Event Test01 **</title>
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<script>
+// $(function(){
+$(document).ready(function() {
+	//1. click
+	$('#cc').click(function(){             // jquery로 했을 때는 click?
+		alert('Click했습니다~~~!!!');
+	});	
+	// 2. hover, this
+	// 2.1) hover(f1, f2)
+	// => f1 : 마우스 hover, f2 : 반대의 경우
+	// => $(this) : 선택자로서 현재의 select 된 요소 자신
+	$('.hh').hover(function(){
+					//$('.hh').css({
+						$(this).css({
+						backgroundColor: "gray",
+						color:"blue",
+						width: "300"
+						});
+					}, function(){
+					//$('.hh').css({
+					$(this).css({
+						backgroundColor: "",
+						color:"",
+						width: ""		
+						}); //css
+					}); //hover
+}) //ready	
+
+
+</script>
+</head>
+<body>
+<h3>**Event Test01 **</h3>
+<h3 id=cc>=> Click</h3>
+<h3 class=hh style="color:red">=> Hover1, this</h3>
+<h3 class=hh style="color:yellow">=> Hover2, this</h3>
+<h3 class=hh style="color:aqua">=> Hover3, this</h3>
+
+</body>
+</html>

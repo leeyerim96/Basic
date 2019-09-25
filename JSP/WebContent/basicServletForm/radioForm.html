@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Radio Form **</title>
+</head>
+<body>
+<h2>** RadioButton Test **</h2>
+<h3>
+<form action="/Jsp01/radio" method="post">
+	<label for=gd >성 별 : </label>
+	<input type="radio" id=gd name=gender value=여성 checked>여성
+	<input type="radio" id=gd name=gender value=남성 >남성
+	<br><br>
+	<label for=md >메일수신 : </label>
+	<input type="radio" id=md name=mailCheck value=Yes checked>수신
+	<input type="radio" id=md name=mailCheck value=No >거부
+	<br><br>
+	<label for=ta >가입인사 : </label><br>
+	<textarea id=ta name=content rows="3" cols="50"></textarea>
+	<br><br>
+	<input type="submit" value=전송>&nbsp;&nbsp;&nbsp;
+	<input type="reset"  value=취소> 
+</form>
+</h3>
+</body>
+</html>

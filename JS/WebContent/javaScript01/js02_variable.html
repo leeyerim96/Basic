@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Java Script Basic02 _ 변수 **</title>
+<script type="text/javascript">
+// Test1.
+	var a ;
+	a=10;
+	//a="JavaScript"
+	var b=100;
+	var c='가나다';
+	d=123;
+	alert('Test1 a+b=> '+(a+b));
+	alert('Test1 a+b+c+d=> '+(a+b+c+d)); // 110가나다123
+// Test2. -> 위 내용을 document.write 로 출력하기
+	document.write('Test2 a+b=> '+(a+b)+'<br>');
+	document.write('Test2 a+b+c+d=> '+(a+b+c+d)+'<br>');
+// 	Test3. 다양한 자료형 => 문자, 정수, 실수, Boolean
+	var n1=100; n2=123.456;
+	var b1=(20>30); b2=(20>10);
+	document.write('Test3 정수=>'+n1+", 실수=>"+n2+'<br>');
+	document.write('Test3 Boolean b1, b2 =>'+b1+", "+b2+'<br>');
+// Test4. 객체(Object) : 여러 데이터를 묶은 덩어리
+	var member={
+		id:'banana',
+		password:'12345',
+		name:'홍길동',
+		age:100
+	};
+	document.write('Test4 id=>'+member.id+", password=>"+member.password+'<br>');
+	document.write('Test4 name=>'+member.name+", age=>"+member.age+'<br>');
+	
+// Test5. 문자열 함수
+	var s='abcdefghijk';
+	document.write('Test5  길이 s.length => '+s.length+'<br>');
+	document.write('Test5 한문자 추출 s.charAt(3) => '+s.charAt(3)+'<br>');
+	document.write('Test5  교체 s.replace => '+s.replace('b','banana')+'<br>');
+	document.write('Test5  대문자로 s.toUpperCase => '+s.toUpperCase()+'<br>');
+// Test6. 숫자에 "," 넣기 (숫자->문자) 와
+//        숫자에서  "," 제거하기 (문자->숫자)
+// => toLocateString('en') : Number와 Date Type의 내장함수이며, 
+//    인자 ('en')로 들어온 지역의 숫자 포맷으로 숫자가 표기되며 뒤에 시스템에 따라서 소숫점이 표시 될 수 있음.
+//    만약 지역값을 주지 않으면 해당 시스템의 지역값에 따라 표기됨
+//    - 소수점 제거기능 추가 .split(".")[0]  
+	var n=1234567.899 ;
+	document.write('Test6 1234567 =>'+Number(n).toLocaleString('en')+'<br>') ;
+	document.write('Test6 1234567 소수이하 제거=>'+Number(n).toLocaleString('en').split(".")[0]+'<br>') ;
+// => "," 제거하기 : 문자함수 replace(",","") 	
+	var s="1,234,567" ;
+	document.write('Test6 1,234,567 =>'+s.replace(",", "")+'<br>') ;
+	// 위의 경우 첫 "," 에만 적용됨 -> 정규식으로 해결 
+	document.write('Test6 1,234,567 =>'+s.replace(/,/gi, "")+'<br>') ;
+	// /,/gi -> g:발생할 모든 패턴에 적용 / i: 대소문자 구분 안함
+</script>
+</head>
+<body>
+<h3>** Java Script Basic02 _ 변수 **</h3>
+<pre>
+**Test1. 변수의 선언과 출력 => alert 
+**Test2. 변수의 선언과 출력 => document.write
+**Test3. 다양한 자료형 => 문자, 정수, 실수, Boolean
+**Test4. 객체(Object) : 여러 데이터를 묶은 덩어리
+**Test5. 문자열 함수
+**Test6. 숫자에 "," 넣기 와  "," 제거하기
+</pre>
+</body>
+</html>

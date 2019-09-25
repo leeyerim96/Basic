@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JS Basic07_ If else, Switch case**</title>
+<script>
+/*
+ 	//Test1
+ 	if(1000>100) alert('참 입니다');
+ 	else alert('거짓 입니다');
+ 	
+ 	//Test2
+ 	var now = new Date();
+ 	var hh = now.getHours();
+ 	if(hh<5) alert('쿨쿨 잡니다~~!');
+ 	else if(hh<8) alert('세수하고 아침식사합니다~!!!');
+ 	else if(hh<9) alert('차 타고 있습니다~~');
+ 	else if(hh<18) alert('학원에서 열심히 공부합니다~~!!');
+ 	else alert('신나게 게임 열심히 합니다~~!!');
+ 	// => 중첩으로 연결해보기
+ 	if(hh<5) alert('쿨쿨 잡니다~~!');
+ 	else {
+ 		if(hh<0) alert('세수하고 아침식사 합니다~~!!');
+ 		else {
+ 			if (hh<9) alert('차 타고 있습니다~~');
+ 			else{
+ 				if(hh<18) alert('학원에서 열심히 공부합니다~~!!');
+ 				else alert('신나게 게임 열심히 합니다~~!!');
+ 			}
+ 		}
+ 	}
+ 	
+ 	// 달을 prompt Dialog로 입력 받아
+ 	// 해당하는 계절을 출력하기
+ 	// 3,4,5: 봄 / 6,7,8: 여름/ 9,10,11: 가을 / 12,1,2: 겨울
+ 	 function promptTest(){
+ 		//var now = new Date();
+ 		//var month = now.getMonth();
+ 		var s = prompt('몇월인지 적으세요',6);
+ 	if(s>=3 && s<=5){
+ 		alert('봄');
+ 	} else if(s>=6 && s<=8) {
+ 		alert('여름');
+ 	} else if(s>=9 && s<=11){
+ 		alert('가을');
+ 	} else if(s==12 || s<=2 && s>=1 ){
+ 		alert('겨울');
+ 	} else if(s>=13 || s==0) {
+ 		alert('잘못입력하셨습니다');
+ 	}
+ }
+ */ 	
+ function promptTest(){
+ 		//var now = new Date();
+ 		//var month = now.getMonth();
+ 		var s = prompt('몇월인지 적으세요',6);
+ 		switch(parseInt(s)){
+ 		case 3: case 4: case 5: alert('봄'); break;
+ 		case 6: case 7: case 8: alert('여름'); break;
+ 		case 9:  case 10: case 11: alert('가을'); break;
+ 		case 12: case 1: case 2: alert('겨울'); break;
+ 		default : alert('잘못입력하셨습니다'); 
+ 		}
+ }	
+</script>
+</head>
+<body>
+<pre> <b>
+** If else, Switch case **
+1. 기본구문 : if else, switch case
+2. if else if
+3. 중첩 if else
+4. 복합: if else if / switch case
+</pre>
+
+<button onclick="promptTest()">prompt</button>
+</body>
+</html>

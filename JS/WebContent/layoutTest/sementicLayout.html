@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Sementic Layout **</title>
+<style>
+	* {margin: 0; padding: 0; border-bottom-width: 0 }
+	body { width: 900px; margin: 0 auto; }
+	#header {width: 100%; height: 160px; background-color: pink; }
+	#nav {width: 180px; height: 400px; background-color: yellow; top:160px; left:0; float:left; }
+	#article {width:712px; height:400px; background-color:aqua; top:160px; left:185px; float:left; } 
+	#footer {width:100%; height:150px; background-color:gray; top:560px; left:0;}   
+</style>
+</head>
+<body>
+<header>
+	<iframe id=header src="header.html"></iframe>
+</header>
+<section>
+	<aside>
+		<nav>
+			<iframe id=nav src="leftMenu.html"></iframe>
+		</nav>
+	</aside>
+	<article>
+		<iframe id=article src="main.html" name=section></iframe>
+	</article>
+</section>
+<footer>
+	<iframe id=footer src="footer.html"></iframe>
+</footer>
+</body>
+</html>

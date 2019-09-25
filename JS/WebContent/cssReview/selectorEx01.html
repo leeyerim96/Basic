@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** css SelectorEx01_tag **</title>
+<style>
+	* {color:blue; }
+	h2 {color:gray; }
+	h3,p,pre {color:green; }
+	input[type="text"] {
+			color:aqua; background-color:gray; 
+			}
+	input[type="password"] {
+			color:red; background-color:yellow;}	
+			
+	#idtest {color:orange;}
+	.class1 {color:black;}
+	.class2 {font-style: italic;}
+	li.class2 {color:olive;font-size:16pt;}			
+</style>
+</head>
+<body>
+<h1>Test1 : Selector_ *</h1>
+<p>* => 모든 Tag에 적용할때</p>
+
+<h2>Test2 : Selector _Tag</h2>
+<h3>2.1) 기본 Tag</h3>
+<pre> 
+단수 적용 => h1
+복수 적용 => h1, h2, p, pre , ,
+</pre>
+<h3>2.2) Form Tag</h3>
+	<form>
+		text : <input type="text"><br>
+		password: <input type="password"><br>
+	</form>
+<h2>Test3 : Id, Class</h2>
+<h3 id=idtest>Test1 : Selector_ID</h3>
+<h3 id=idtest>=> Html 문서내에서 Tag를 인식할 수 있는 방법</h3>
+<h3 id=idtest>=> Html 문서내에서 유일해야함 </h3>
+<h3 id=idtest>=> 그러나 Html 내에서는 무관하고 자바스크립트에서는 Error</h3>
+<h2 class=class1>Test2 : Selector_Class</h2>
+<h3 class="class1 class2">=> Html 문서내에서 Tag를 인식할 수 있는 방법</h3>
+<h3 class="class1 class2">=> 클래스명의 중복을 허용하고,<br> 
+ 하나의 Tag가 여러 클래스를 중복사용하는것도 가능함.</h3>
+<h3 class="class1 class2">=> 실제 많이 사용되는 유형</h3>
+	<ul>
+		<li class="class2">사과
+		<li class="class2">딸기
+		<li class="class2">오렌지
+	</ul>
+	
+</body>
+</html>

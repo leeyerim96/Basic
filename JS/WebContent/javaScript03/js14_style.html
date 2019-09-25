@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JS Style **</title>
+<script>
+	onload=function(){
+		var output='';
+		//Test1. Text
+		for(var i=0; i<10; i++){
+			output += '<h1> Header - '+i+'</h1>';
+		}
+		document.body.innerHTML=output;
+		//Test2. Color
+		for(var i=0; i<256; i++){
+			output += '<div></div>';
+		}
+		
+		document.body.innerHTML=output;
+		var divs=document.querySelectorAll('div');
+		for(var i=0; i<divs.length; i++){
+			divs[i].style.height='2px';
+			divs[i].style.backgroundColor='rgb('+30+','+i+','+i+')';
+		}
+		
+	}
+</script>
+</head>
+<body>
+<b><pre>
+*** 스타일 적용시 주의 사항 ***
+   스타일의 속성명 그대로 사용할 수 없음(~사용할수 없기 때문)
+   ~으로 연결되는 부분의 첫글자를 대문자로 변경해서 사용하면 됨
+   Ex) background-image => backgroundImage
+   
+
+</pre></b>
+</body>
+</html>

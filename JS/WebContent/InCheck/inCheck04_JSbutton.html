@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** 입력 자료의 무결성 점검_jS ,button **</title>
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<script src="../jsLib/inCheck.js"></script>
+<script>
+function insertCheck(){
+	var id=$('#id').val() ;
+	var password=$('#password').val();
+	var pLength=password.length;
+	var name=$('#name').val();
+	
+	if (id=="") {
+		alert('id 를 입력 하세요 ~~');
+		$('#id').focus();
+		return;
+	}else if (id.length < 5) {
+		alert('id는 4글자 이상 입니다 ~~~');
+		$('#id').focus();
+		return;
+	}else if (id.replace(/[a-z.A-Z.0-9]/g,'').length>0) { 
+		// 영문확인 정규식
+		alert('id는 영문과 숫자로만 입력 하세요  ~~~');
+		$('#id').focus();
+		return;
+	};
+	
+	if (password=="") {
+		alert('password 를 입력 하세요 ~~');
+		$('#password').focus();
+		return;
+	}else if (password.length< 5) {
+		alert('password는 4글자 이상 입니다 ~~~');
+		$('#password').focus();
+		return;
+	}else if (password.replace(/[!-*]/g,'').length>=pLength) {
+		alert('password는 특수문자를 반드시 입력해야 됩니다 ~~~') ;
+		$('#password').focus();  
+		return;
+	} else if (password.replace(/[!-*.0-9]/g,'').length>0) {
+		alert('password는 숫자와 특수문자로만 정확하게 입력하세요 ~~~') ;
+		$('#password').focus();
+		return;
+	};
+	
+	// name : 한글 	
+	if (name=="") {
+		alert('name 을 입력 하세요 ~~');
+		$('#name').focus();
+		return;
+	}else if (name.length < 2) {
+		alert('name은 2글자 이상 입니다 ~~~');
+		$('#name').focus();
+		return;
+	}else if (name.replace(/[가-힣.a-z]/gi,'').length>0) {
+		alert('name은 한글 또는 영문으로 입력 하세요 ~~~');
+		$('#name').focus();
+		return;
+	};
+	
+	$('form').submit(	
+	);
+	
+	
+}
+</script>
+</head>
+<body>
+<h3>** 입력 자료의 무결성 점검_jS ,button **</h3>
+<form action="test" method="post" name="myForm">
+<table>
+	<tr><td bgcolor="Springgreen">I D</td>
+	    <td><input type="text" id="id" name="id" value="banana"></td>
+	</tr>
+	<tr><td bgcolor="Springgreen">Password</td>
+	    <td><input type="password" id="password" name="password" value="12345!"></td>
+	</tr>
+	<tr><td bgcolor="Springgreen">Name</td>
+	    <td><input type="text" id="name" name="name" value="홍길동"></td>
+	</tr>
+	<tr><td></td>
+		<!-- form Tag 내에서 button 사용시 
+		input Tag 의 type='submit' 처럼 작동함  -->
+	    <td>
+	    	<input type="button" value="전송" onclick="insertCheck()">&nbsp;
+	    	<!--  insertCheck()에서 오류 확인 후 성공이면 submit을 처리 -->
+	        <input type="reset" value="취소"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

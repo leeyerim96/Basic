@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Java Script Basic04_getId & function</title>
+<script>
+// Test1
+	function changeColor(){
+		var t=document.getElementById('test');
+		t.style.color="red";
+}
+
+// Test2
+	function adder() {
+	var num1 = document.getElementById('n1').value;
+	var num2 = document.getElementById('n2').value;
+	var result = parseInt(num1)+parseInt(num2);
+	// result Tag에 값 넣기
+	document.getElementById('n3').value = result;
+}
+
+// Test3
+	function changeImage(){
+	/* toggle 방식으로 구현 해 보세요 */
+	if(document.getElementById('image').src.match('../image/aaa.gif')){
+		document.getElementById('image').src='../image/ccc.gif';		
+	}else{
+		document.getElementById('image').src='../image/aaa.gif';
+	}
+}
+
+// Test4
+	function setClock(){
+	var now= new Date();
+	var t ='DateTime: '+now.getFullYear()+'년'+(now.getMonth()+1)+'월'+now.getDate()+'일'+
+			'_'+now.getHours()+':'+now.getMinutes()+':'+now.getSeconds() ;
+	document.getElementById("clock").innerHTML=t;
+	setTimeout("setClock()",1000)
+}
+
+</script>
+</head>
+<body onload="setClock()">
+<h3>** Java Script Basic04_getId & function</h3>
+------------------------------------------------------<br>
+Test4. function setClock : html Tag에 값넣기<br>
+=>h Tag에 시간 표시하기 <br>
+=> body의 onload 이벤트를 이용...<br>
+=> 문서의 실행과 동시에 출력 되도록...<br>
+
+<h5 id=clock>DateTime</h5>
+
+<pre>
+setTimeout("실행할 자바코드", 코드실행대기시간)
+=> 지정된 대기시간(단위 1/1000초)후에 지정된 자바코드를 실행
+=> 타이머 설정 효과
+-----------------------------------------------------
+Test1. Tag 전달 => getElementById
+<h5 id=test >getElementById Test</h5>
+<button onclick="changeColor()">Click, ChangeColor</button><br>
+Test2. Tag의 값 (value) 전달
+<b>** Adder Test **</b>
+number1 : <input type="number" id=n1 value="123">
+number2 : <input type="number" id=n2 value="100">
+*Result : <input type="number" id=n3 >
+<button onclick="adder()">ADD</button>
+
+</pre>
+Test3. function : Image Change
+<img src="../image/aaa.gif" width="150" height="200" id=image><br>
+<button onclick="changeImage()">Click, ChangeImage</button>
+
+
+</body>
+</html>

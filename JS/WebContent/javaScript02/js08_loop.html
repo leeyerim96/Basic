@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JS Basic08 _ Loop, Array, Object **</title>
+<script>
+	// Test1 Array
+	var arr=['가','나','다','라','마','바'] ;
+	var num=[1,2,3,4,5,6,7] ;
+	// set
+	arr[0]='Java' ; num[0]=100;
+	// get
+	alert('Array Test arr[0] , num[0]=>'+arr[0]+' , '+num[0]);
+	alert('Array Test arr =>'+arr[0]+','+arr[1]+','+arr[2]+','+arr[3]+'...');
+	alert('Array Test num =>'+num[0]+','+num[1]+','+num[2]+','+num[3]+'...');
+	// Test2 Loop_for 
+	for (var i=0; i<arr.length; i++) {
+		document.write('arr['+i+']='+arr[i]+'<br>');
+	}
+	// 실습 :  1~100 까지의 합을 for 구문으로 구하여 출력 하세요 
+	// var sum = 1+2+3+4+5+......+100 ;
+	var sum=0 ;
+	for (var i=1;i<=100;i++){
+		sum+=i ;
+	} 
+	document.write('1~100 까지의 합 (by For) ='+sum+'<br>');
+	
+	// Test3 Loop_while , do while
+	// while
+	var i=1; 
+	sum=0;
+	while (i<=100) {
+		sum+=i ;
+		i++;
+	}	
+	document.write('1~100 까지의 합 (by while) ='+sum+'<br>');	
+	// do while	
+	i=1; 
+	sum=0;
+	do {
+		sum+=i ;
+		i++;
+	} while (i<=100);
+	document.write('1~100 까지의 합 (by do) ='+sum+'<br>');	
+	
+	// Test4 continue, break
+	// => continue 또는  break 를 사용해서 구현 하세요 ~~~
+	// => 1~100 까지 에서 5의 배수들 의 합을 구하세요 ~~~ -> continue
+	// => 1~100 까지 에서 5의 5배수를 만나면 종료한다 ~~~ -> break
+	sum=0 ;
+	for (var i=1;i<=100;i++){
+		if (i%5!=0) continue;
+		sum+=i ;
+	} 
+	document.write('1~100 까지의 합 (by For) ='+sum+'<br>');
+	
+	// 실습) 1초 동안 while_Loop 의  반복횟수 Count
+	var count=0;
+	var start = new Date().getTime();
+/* 	while (new Date().getTime() <= start+1000) {
+		count++;
+	} */
+
+	while (true) {
+		if (new Date().getTime() > start+1000) break;
+		count++;
+	}
+	
+	document.write('1초 동안 while_Loop 의  반복횟수 ='+count+'<br>');
+	// Test5 Object(객체)의 선언과 출력
+	
+	// 5.1) 객체 정의 
+	// => Type이 다른 여러 자료형을 한번에 선언 
+	// => 이때 선언되는 자료를  속성(=요소)
+	var myObj = {
+		name: "건조망고",
+		size: 100,
+		ingre: '망고,설탕,방부제,색소',
+		country:'필리핀'
+	}
+	
+	// 5.2) 객체출력
+	// => for in : 간편한 for
+	// => 객체의 요소(=속성)를 하나씩 차례로 제공해줌
+	// => 아래의 nn는 단독 사용시 속성명을 출력해줌
+	for (var nn in myObj) {
+		document.write(nn+'=>'+myObj[nn]+'<br>') ;
+	}
+	document.write('------------------------------<br>') ;
+	// myObj.name 가능
+	var person={
+		name: '홍길동',
+		eat: function(menu) {
+			document.write('점심메뉴 로 '+menu+'을 맛있게 먹었습니다~~<br>') ;
+		}, 
+		study: function(kind) {
+			document.write('그리고 '+kind+' 를 열심히 공부 합니다 ~~<br>') ;
+		}
+	} // person
+	document.write(person.name+'씨는 <br>');
+	person.eat('짜장면');
+	person.study('JAVAScript');
+	
+</script>
+</head>
+<body>
+<h4>** Loop, Array, Object **</h4>
+** 1) Array<br><br>
+** 2) Loop_for<br><br>
+** 3) Loop_while<br><br>
+** 4) continue, break 문 사용가능<br><br>
+** 5) Object(객체)의 선언과 출력 그리고 this<br><br>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** DOM3 - JS 단계별 실행 절차 **</title>
+<script>
+// Test1. 선언적 함수 와 변수
+// => 파싱 단계에서는 선언적 함수 와 변수명이 정의됨 
+// => 이때 변수의 값은 undifined 로 정의 되며 실행시에 값을 할당받음. 
+	document.write('** Before first(5) 호출 =>'+first(5)+'<br>') ;
+	document.write('** Before name =>'+name+'<br>') ;
+	document.write('** Before first =>'+first+'<br>') ;
+	var name='홍길동';
+	var first=123;
+	function first(x) {
+		return x*x;
+	}
+	// Test2. 변수와 함수가 같은이름을 가지고 있는 경우
+	// => 우선 순위, 출력 -> 함수 호출시 오류
+	//document.write('*** After first(5)=>'+first(5)+'<br>');
+	document.write('*** After first =>'+first+'<br>');
+	
+	// ---------------------------------------------------------
+	// Test3. this 와  객체의 속성과 메서드 의 경우\ 누가 먼저 실행되는지 익명함수가 먼저 실행 -> 그다음 선언적 함수 실행
+	// => var person 은 파싱 단계에서 이름만 정의가 되고 undifined 값을 가지며,
+	//    Before 단계에서는 내부의 속성과 메서드는 할당 받지 못했으므로 오류 발생  
+	// => 인식 못하므로 before 닫아야 after test 가능함.
+	document.write('*** Before person =>'+person+'<br>');
+	//document.write('*** Before person.name =>'+person.name+'<br>');
+	//document.write('*** Before person.first =>'+person.first(7)+'<br>');
+	var person={
+		name: '홍길동',
+		eat: function(menu) {
+			document.write(this.name+'씨는 점심메뉴 로 '+menu+'를 맛있게 먹었습니다~~<br>') ;
+		}, 
+		study: function(kind) {
+			this.eat('냉면 곱배기');
+			document.write('그리고 '+kind+' 를 열심히 공부 합니다 ~~<br>') ;
+		},
+		 first: function(x) {
+			return x*x;
+		}
+	} // person
+	person.study('JAVAScript');
+	document.write('*** After person =>'+person+'<br>');
+	document.write('*** After person.name =>'+person.name+'<br>');
+	document.write('*** After person.first =>'+person.first(7)+'<br>');
+	
+</script>
+</head>
+<body>
+<pre><b>
+** JavaScript 실행 절차 Test **
+1. 파싱 단계 : 구문 분석 단계
+	선언적 함수들과 전역 변수를  정의
+	=>  함수 먼저 그리고 다시 변수 정의 되면서 
+        구별없이 하나의 first 정의됨
+    =>  변수명 first 만 정의 되지 값(100)은 할당 안되고 undifined 값을 가짐    
+2. 실행 단계 : 순차적으로 실행됨=> 10행, 11행, 14행, 18 ~ 
+</b></pre>
+</body>
+</html>

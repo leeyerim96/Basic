@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** Variable 선언과 Scope Test **</title>
+<script>
+// Test1. 선언
+	var i=100;
+	let j=123;
+	j='가나다';
+	const PI=3.141592;
+	//PI=123456; -> 상수는 재정의, 재할당 안됨
+	var i='ASC';
+	//let j='LET';   -> 재정의 안됨
+	j='LET'; 
+	k='짜장면';
+	
+	document.write('변수선언 test: i,j, const =>'+i+','+j+','+PI+','+k+'<br>');
+	// delete는 연수의 정의를 취소해줌
+	// var, let, const로 정의한 변수는 delete 적용 안되고,
+	// 생략하고 변수명으로만 정의한 k는 적용됨
+	//delete i; delete j; delete PI;
+	delete k;
+	document.write('변수선언 test: i,j, const =>'+i+','+j+','+PI);
+	
+	//Test2.Scope
+	var sum=100;
+	onload=function(){
+		function f(cnt){
+			sum=0;
+			for(var i=0; i<cnt; i++){
+				sum+=1;
+			} // for
+			document.write('i =>'+i+'<br>');
+			return sum;
+		} // function f;
+		document.write('sum1 =>'+sum+'<br>');
+		document.write('function f(cnt)=>'+f(10)+'<br>');
+		document.write('sum2 =>'+sum+'<br>');
+	}
+	
+</script>
+</head>
+<body>
+<pre>
+** 1. Variable 선언 Test **
+=> 변수선언 : var(재선언 가능, 재할당가능), let(재선언 불가능, 재할당가능) 동일
+=> 상수선언 : const(재선언 불가능, 재할당 불가능)
+=> Type : 정수 ,실수, 문자열, boolean, null, undefined, function(), Object(내장객체 : Date...)
+=> 전역 변수 선언시는 var 생략가능
+=> 차이점 : var를 선언시에는 delete가 적용되지않고 변수와 같이 메모리에 남아있음.
+
+** 2. Variable Scope Test **
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** selectorEx03_자식(Child)과 후손(Desc) **</title>
+<style type="text/css">
+	#div1 > h1 {color:aqua;} /* 자식(child)만 해당 */
+	#div2 h1 {color:hotpink;} /* 후손(descendent)들 모두 해당 */
+</style>
+</head>
+<body>
+<h2>** selector_자식(child) : 자식만 해당 **</h2>
+<div id=div1>
+	<h1>Div1 의 Child1</h1>
+	<h1>Div1 의 Child2</h1>
+		<div>
+			<h1>Div1 의 손자1</h1>
+			<h1>Div1 의 손자2</h1>
+		</div>
+</div>
+<h2>** selector_후손(descendent) : 후손들 모두 해당 **</h2>
+<div id=div2>
+	<h1>Div2 의 Child1</h1>
+	<h1>Div2 의 Child2</h1>
+		<div>
+			<h1>Div2 의 손자1</h1>
+			<h1>Div2 의 손자2</h1>
+		</div>
+</div>
+</body>
+</html>

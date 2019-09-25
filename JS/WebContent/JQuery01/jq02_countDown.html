@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" http-equiv="refresh" content="5;url-jq02_frameAni.html">
+<title>**countDown & 화면전환 **</title>
+<style>
+	body { text-align: center;}
+</style>
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<script>
+// ** location 함수 (window,location ...)
+//=> href : 화면전환 ( 히스토리에 남음 -> 이전페이지로 이동가능)
+
+
+// ** 시간 관련 함수 사용하기
+//1) 10초 후 Page 자동이동 
+// => jq02_frameAni.html 로
+// => setTimeout("location.href='jq02_frameAni.html'", 1000*10); 이용
+	setTimeout('location.href="jq02_01frameAni.html"', 1000*10);
+	
+// 2) 10초동안 10~0 까지 표시하기 (CountDown 하기)
+// => setInterval("실행할 자바코드",반복주기)
+	var sec = 9;
+	function countDown() {
+		$('#cd').html(sec) ;
+		if (sec!=0) sec--;
+	}
+	setInterval("countDown()",1000) ;
+</script>
+</head>
+<body>
+<div align="center">
+	<h2>환영합니다 ~~~</h2>
+	<h3>=> 10초후 자동 이동 합니다~~</h3>
+	=> 아래 위치에 숫자가 <br>
+	 10,9,8,7,6,...0<br>
+	 표시 되도록 해 보세요 ~~<br>
+	<span id=cd style=font-size:15em>10</span><br>
+	<button onclick="location.reload()">새로고침</button>
+	<button onclick="location.href='jq01_basic.html'">href</button>
+	<button onclick="location.replace('jq03_attr.html')">place</button>
+</div>
+</body>
+</html>

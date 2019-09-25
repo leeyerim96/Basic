@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JS Basic06_ Message Dialog **</title>
+<style>
+	button{ border-radius: 15px 15px 15px 15px;
+			background-color :pink;
+			color:black;
+			text-shadow: 2px 2px 2px 2px;
+			font-size: 1.2em;
+			width: 150px; height: 70px;
+		}
+</style>
+<script>
+function confirmTest(){
+    if(confirm('점심에는 시원한 냉면을 먹으려면 "확인"\n 뜨거운 설렁탕을 먹으려면 "취소"')){
+       document.write('냉면을 선택 하였습니다.');
+    }else{
+       document.write('설렁탕을 선택 하였습니다.');
+    }
+ }//confirmTest
+	
+	function promptTest(){
+		var s = prompt('휴가 때 하고 싶은일을 마음껏 적으세요~~~', 'Java 공부 할꺼에요~');
+		if(s=='') alert('입력하세요~~~');
+		document.write('당신의 선택은 =>'+s);
+		
+		//age 입력 받기
+		var age=prompt('나이를 입력 하세요~', 20)
+		if(age>=20) alert('당신은 성년 입니다~~');
+		else alert('당신은 미성년자 입니다~~');
+}
+
+</script>
+</head>
+<body>
+<h4>** JS Basic06_ Message Dialog **</h4>
+<button onclick="alert('alert Test !!!')">alert</button>
+<button onclick="confirmTest()">confirm</button>
+<button onclick="promptTest()">prompt</button>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** JQuery Basic **</title>
+<!-- 1. 라이브러리 연결
+      1) 다운로드 : http://jquery.com  -->
+<script src="../jsLib/jquery-3.2.1.min.js"></script>
+<!--  2) CDN 호스트 이동 
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"><</script>
+-->
+
+<!-- 2. JQuery 라이브러리 사용하기 
+=> window.jQuery .....
+=> jQuery : $ 
+=> $(선택자).메서드(매개변수)
+-->
+
+<script>
+// ready: 문서 객체 준비 완료됨을 의미하는 기본 이벤트
+// => 자바스크립트의 window.onload=function(){.... } 이벤트와 같은 기능
+	$(document).ready(function(){
+		// 출력
+		/* //document.write('**Hello JQuery !!! <br>');
+		alert(' ** Hello JQuery !!! ');
+		// 선택자(Selector)
+		// 모든 h3에 tag 넣기
+		
+		$('h3').css('color', 'Blue');
+		$('h3').css('background', 'Yellow');
+		
+		var html = $('h3').html();
+		var text = $('h3').text();
+		alert('html =>'+html);
+		alert('text=> '+text); */
+		
+		// 값 넣기
+		// 모든 h3에 적용, html tag는 적용안됨
+		//$('h3').html('<b>하하하 호호호<b>')
+		// 모든 h3에 적용, html tag도 적용됨
+		//$('h3').text('<b>하하하 호호호<b>');
+		
+		//id같은 경우 #이 앞에 들어감  클래스는 .
+		// 다양한 선택자(Selector)
+		// => style에 적용했던 선택자 모두 사용가능
+		// => id, class, 상속관계
+		$('#iii').html('<a href="http://www.naver.com">ID Test: Naver가기</a>');
+		$('.ccc').html('<a href="#">Class Test</a>');
+		$('h3:nth-child(1)').css({
+				color : 'yellow',
+				background: 'aqua'
+		})
+		$('h3:nth-child(2n)').css({
+			color : 'green',
+			background : 'pink'
+		})
+		
+		
+	}) //ready
+
+</script>
+
+
+</head>
+<body>
+	<h3>** JQuery Basic**</h3>
+	<h3>** 1) JQuery 출력</h3>
+	<h3>** 2) 선택자(Selector) Test</h3>
+	<h3>** 3) Tag 의 값 인식하기</h3>
+	<h3 class=ccc>** 4) Tag에 Text 출력</h3>
+	<h3 class=ccc>** 5) 다양한 선택자 (Selector)</h3>
+	<h3 id=iii>** => id, class, 상속관계 Test</h3>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** css 가상요소 after , before **</title>
+<!-- 가상 선택자 (pseudo selector) ::before , ::after
+=> 실제로 존재하지 않지만 선택자로 지정한 것처럼 취급
+=> after선택자는 다른 선택자 뒤에 쓰이고 before은 다른선택자 이전에 사용됨. 
+ 
+=> 용도
+- 텍스트끼리 서로 구분할 경우
+- 특수코드를 변환없이 그대로 보여줄 경우
+- 백그라운드 이미지를 해당 문구 앞 또는 뒤에 삽입하는 경우
+- 메뉴 구분선을 넣거나, 반응형 웹버튼을 만들때 사용됨.
+
+=> 주의 
+- 익스플로러 9 이상의 거의 모든 브라우저에서 사용이 가능
+- 만약 익스플로러 8에서 사용하시려면 :before, :after 
+-->
+
+<style>
+  h3::before {
+    content: "before"
+  }
+  p::after {
+    content: "after"
+  }
+</style>
+
+<style type='text/css'>
+.test::before {
+    content: '-';
+}
+
+.test2::after {
+    content: '&nbsp;';
+}
+</style>
+
+</head>
+<body>
+<h2>** css 가상요소 after , before **</h2>
+<h2>Test 1)</h2>
+<h3>내 앞에붙는 이는 Before는 가상요소 야</h3>
+<p>내 뒤에붙는 이는 after는 가상요소 야</p>
+<h2>Test 2)</h2>
+<span>Web</span>
+<span class="test">Is</span>
+<span class="test">Free</span>
+<span class="test">Com</span>
+<span class="test2">특수기호_그대로 표시됨</span>
+</body>
+</html>

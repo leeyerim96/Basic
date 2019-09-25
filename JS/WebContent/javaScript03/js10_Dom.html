@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>** DOM1 - JS Basic Process **</title>
+<script>
+	alert('** Process 0 **');
+	document.getElementById('p1').style.backgroundColor='Red';
+	document.getElementById('p2').style.backgroundColor='Blue';
+</script>
+</head>
+<body>
+<h4>** DOM1 - JS Basic Process **</h4>
+=> DOM: 문서객체모델 (Document Object Model) <br>
+** Test1. JS Basic Process <br>
+<span id=p1>** Process 1 **</span><br>
+<script>alert('** Process 2 **')</script> 
+<span id=p3>** Process 3 **</span><br>
+=> 실행 순서 : 0-2-1-3<br>
+
+** Test2. Tag 속성 변경 <br>
+=> 스크립트 위치를 body영역 내에서 해당 태그의 위, 아래로 옮겨본다.<br>
+<script>
+	document.getElementById('p1').style.backgroundColor='Yellow';
+	document.getElementById('p3').style.backgroundColor='Aqua';
+</script>
+<pre>
+** 결론. 웹 페이지 생성순서 ** 
+=> body 영역의 태그 생성 이전에 head 영역의 스크립트가 실행 되므로
+      이때는 태그를 인식 할 수 없기 때문에 스크립트가 반영 안됨<br>
+=> 해결1 실행 순서를 조정 (Test2)
+=> 해결2 이벤트를 적용 : window.onload (~~dom2.html)
+</pre>
+
+</body>
+</html>

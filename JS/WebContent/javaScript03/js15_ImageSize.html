@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>*** Image Size 조정하기 ***</title>
+<script>
+// 1. 고전적 이벤트 처리방식
+	onload = function() {
+		var bcnt = 0 ;
+		var scnt = 0 ;
+		var image = document.getElementById('img');
+		var big = document.getElementById('bb');
+		var small = document.getElementById('bs');
+		
+		big.onclick=function() {
+			if (bcnt<10) {
+				image.width  += 10 ;
+				image.height += 10 ;
+				bcnt ++ ;
+			} else alert('최대 크기 입니다~~') ;
+		} // big
+		
+		small.onclick=function() {
+			if (image.width>10 && image.height>10 && scnt<10) {
+				image.width  -= 10 ;
+				image.height -= 10 ;
+				scnt ++ ;
+			} else alert('최소 크기 입니다~~') ;
+		} // small
+	}  // onload 
+	
+// 2. 인라인+스크립트 방식 
+// 지역변수 사용시 => 버튼을 누를때마다 cnt 값 reset 그러므로 정확하게 count 될수없음
+// 전역변수 사용하고 big, small 각각 사용함
+// => 이때는 image 를 개별 function 내에 정의 해야함.
+/* 	var cnt1 = 0 ;
+	function imgBig() {
+		var image = document.getElementById('img');
+		cnt2=0 ;
+		if (cnt1<10) {
+			image.width  += 10 ;
+			image.height += 10 ;
+		cnt1 ++ ;
+		}else { 
+			alert('최대 크기 입니다~~') ;
+		}
+	} // imgBig
+	var cnt2 = 0 ;
+	function imgSmall() {
+		var image = document.getElementById('img');
+		cnt1=0 ;
+		if (image.width>10 && image.height>10 && cnt2<10) {
+			image.width  -= 10 ;
+			image.height -= 10 ;
+		cnt2 ++ ;
+		} else {
+			alert('최소 크기 입니다~~') ;
+		} //if
+	} // imgSmall */
+</script>
+</head>
+<body>
+<h3><pre>
+이미지와 버튼 두개를 만들고 이벤트를 작성연결 해본다.
+=> 버튼1 : 이미지의 현재 크기를 10px 씩 10번 커지는 버튼
+=> 버튼2 : 이미지의 현재 크기를 10px 씩 10번 작아지는 버튼 
+</pre></h3> 
+<h3>** Script 이미지 **</h3>
+<img src="../image/aaa.gif" id="img"><br>
+<button id="bb" onclick="imgBig()">점점크게</button>&nbsp;&nbsp;&nbsp;
+<button id="bs" onclick="imgSmall()">점점작게</button><br>
+<hr>
+<h3>** a Tag 의 url 이용한 event 처리 **</h3>
+<a href="javascript:imgBig();">클릭 점점크게</a>&nbsp;&nbsp;&nbsp;
+<a href="javascript:imgSmall();">클릭 점점작게</a><br>
+</body>
+</html>

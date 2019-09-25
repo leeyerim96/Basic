@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* window.onload= .... window객체는 생략가능*/
+	onload = function() {
+		var d;
+		while (true) {
+			// 단입력받기 & 입력오류확인
+			d = prompt('출력할 단을 입력');
+			if(d>9 || d<2){
+				alert('잘못입력했습니다 \n 다시 입력해주세여')
+			}else break;
+		}
+			var a = document.querySelectorAll('h4');
+			for (var i = 0; i < a.length; i++) {
+				a[i].style.color = 'Red';
+				a[i].style.backgroundColor = 'Silver';
+				a[i].innerHTML = d + '*' + (i + 1) + '=' + d * (i + 1) + '<br>';
+			}
+		
+		var h=document.querySelectAll('title');
+		h.style.color='yellow';
+		h.style.background='green';
+		h.innerHTML=d+'단 출력';
+
+}
+	
+</script>
+</head>
+<body>
+	<pre> **과제 **
+prompt Dialog 를 이용해서 숫자를 입력받아 해당 단의 구구단을 출력하세요~
+body 영역에 h4 태그를 이용해서 미리 디자인 해놓고 여기 출력하세요~
+<title></title>
+<h4>2단</h4>
+<h4>3단</h4>
+<h4>4단</h4>
+<h4>5단</h4>
+<h4>6단</h4>
+<h4>7단</h4>
+<h4>8단</h4>
+<h4>9단</h4>
+
+</pre>
+</body>
+</html>
